@@ -2,6 +2,7 @@
 import express from 'express';
 import dataBase  from './database/conexionDatabase.js';
 import productoRouter from './routes/RouterProducto.js';
+import cors from 'cors';
 
 /* Instancia de Expres y apertura de puerto */
 const app = express();
@@ -14,6 +15,10 @@ try {
 } catch (error) {
     console.log('Conexion no exitosa')
 }
+
+app.use(cors())
+/* Tiene que ir antes del uso de la ruta */
+app.use(express.json())
 
 /*  */
 app.use('/productos', productoRouter)
