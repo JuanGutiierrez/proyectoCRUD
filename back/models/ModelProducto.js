@@ -1,12 +1,12 @@
-import { Sequelize } from "sequelize";
+import { DataTypes } from "sequelize";
 import dataBase from "../database/conexionDatabase.js";
 
 const Producto = dataBase.define('productos', {
     nombre: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING
     },
     descripcion: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING
     }
 })
 
