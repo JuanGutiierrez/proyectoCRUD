@@ -1,6 +1,7 @@
 /* Importacion de dependencia y archivos */
 import express from 'express';
 import dataBase  from './database/conexionDatabase.js';
+import productoRouter from './routes/RouterProducto.js';
 
 /* Instancia de Expres y apertura de puerto */
 const app = express();
@@ -13,6 +14,9 @@ try {
 } catch (error) {
     console.log('Conexion no exitosa')
 }
+
+/*  */
+app.use('/productos', productoRouter)
 
 /* Ejecucion de servidor */
 app.listen(port, () =>{
